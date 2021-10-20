@@ -1,8 +1,49 @@
-// import functions and grab DOM elements
+import { pokemon } from './pokemon.js';
+console.log(pokemon);
 
-// initialize global state
+const poke1Img = document.getElementById('poke-1-img');
+const poke2Img = document.getElementById('poke-2-img');
+const poke3Img = document.getElementById('poke-3-img');
+const button = document.getElementById('select');
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+const generatePokemon = () => {
+    let randPoke1 = Math.floor(Math.random() * pokemon.length);
+    let randPoke2 = Math.floor(Math.random() * pokemon.length);
+    let randPoke3 = Math.floor(Math.random() * pokemon.length);
+
+    while (
+        randPoke1 === randPoke2 || 
+        randPoke1 === randPoke3 ||
+        randPoke2 === randPoke3 
+    ) { 
+        randPoke1 = Math.floor(Math.random() * pokemon.length);
+        randPoke2 = Math.floor(Math.random() * pokemon.length);
+        randPoke3 = Math.floor(Math.random() * pokemon.length);
+    }
+    let poke1 = pokemon[randPoke1];
+    poke1Img.src = poke1.url_image;
+
+    let poke2 = pokemon[randPoke2];
+    poke2Img.src = poke2.url_image;
+
+    let poke3 = pokemon[randPoke3];
+    poke3Img.src = poke3.url_image;
+        
+};
+
+generatePokemon();
+
+let totalPlays = 0;
+
+button.addEventListener('click', ()=>{
+    generatePokemon();
+    totalPlays++;
+    if (totalPlays >= 10){
+      <a href = './results/results.js'></a>
+    } else {
+        generatePokemon();
+    }
+		   
+	
+		
+});
