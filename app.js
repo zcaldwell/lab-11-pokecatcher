@@ -38,12 +38,13 @@ let totalPlays = 0;
 button.addEventListener('click', ()=>{
     generatePokemon();
     totalPlays++;
+    console.log(totalPlays);
     if (totalPlays >= 10){
-      <a href = './results/results.js'></a>
+        window.location.replace('./results/index.html'); 
     } else {
         generatePokemon();
     }
-		   
+	
 	
 		
 });
