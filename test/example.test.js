@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
-import { getPokedex } from '../Results/results.js';
+import { findById, encounteredPokemon, getPokedex } from '../storage.js';
 import { pokemon } from '../pokemon.js';
 
 const test = QUnit.test;
@@ -44,9 +44,47 @@ test('get pokedex should give me pokemon info', (expect) => {
     
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = getPokedex(1, pokemon);
+    const actual = findById(pokemon, 1);
 
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.deepEqual(actual, expected);
 });
+
+test ('getPokedex should get info out of localstorage', (expect)=> {
+    const results = [
+        { id: 'bulbasaur', encountered: 1, picked: 1 },
+        { id: 'pikachu', encountered: 2, picked: 2 }
+    ];
+    localStorage.setItem('RESULTS', JSON.stringify(results));
+
+    const actual = getPokedex();
+
+    expect.deepEqual(actual, results);
+});
+
+test ('getPokedex should return an empty array if there is nothing in results', (expect) =>{
+    localStorage.removeItem('RESULTS');
+    
+
+    const actual = getPokedex();
+
+    expect.deepEqual(actual, []);
+});
+
+test ('encounteredPokemon should grab a pokemons ID and increment encountered', (expect) => {
+    localStorage.removeItem('RESULTS');
+    const expected = [
+        { id: 'bulbasaur', encountered: 1, captured: 0 },
+    ];
+   
+    encounteredPokemon('bulbasaur');
+    const actual = getPokedex();
+
+
+    expect.deepEqual(actual, expected);
+    
+});
+    
+    
+    
