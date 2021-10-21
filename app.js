@@ -50,7 +50,7 @@ button.addEventListener('click', ()=>{
         const chosenId = Number(radioChoice.value);
         totalPlays++;
         capturePokemon(chosenId);
-    
+      
     // console.log(totalPlays);
         if (totalPlays >= 10){
             window.location.replace('./results/index.html'); 
