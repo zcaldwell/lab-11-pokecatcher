@@ -26,8 +26,3 @@ button.addEventListener('click', () => {
     localStorage.removeItem('RESULTS');
 });
 
-// for (let item of results) {
-//     const poke = findById(pokemon, item.id);
-
-
-// }
