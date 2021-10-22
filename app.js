@@ -56,7 +56,7 @@ button.addEventListener('click', ()=>{
       
     // console.log(totalPlays);
         if (totalPlays >= 10){
-            window.location.replace('./results/index.html'); 
+            window.location = './results';
         } else {
             generatePokemon();
         }
