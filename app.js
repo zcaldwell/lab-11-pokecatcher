@@ -46,6 +46,9 @@ generatePokemon();
 
 button.addEventListener('click', ()=>{
     const radioChoice = document.querySelector('input[type=radio]:checked');
+    poke1Radio.checked = false;
+    poke2Radio.checked = false;
+    poke3Radio.checked = false;
     if (radioChoice){
         const chosenId = Number(radioChoice.value);
         totalPlays++;
