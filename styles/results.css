@@ -1,0 +1,22 @@
+* {
+    font-family: VT323;
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+img {
+    border: 1em solid black;
+    height: 300px;
+    width: 300px;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    
+}

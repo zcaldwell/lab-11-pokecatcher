@@ -11,26 +11,33 @@
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 
-<body>
-    <h1>Pokemon Thing</h1>
-        <div class="pokemon-options"></div>
-            <label class="pokemon-choices">
-                <input name="pokemon" type="radio" id="poke-1-radio">
-                <img id="poke-1-img">
-            </label>
-            <label class="pokemon-choices">
-                <input name="pokemon" type="radio" id="poke-2-radio">
-                <img id="poke-2-img">
-            </label>
-            <label class="pokemon-choices">
-                <input name="pokemon" type="radio" id="poke-3-radio">
-                <img id="poke-3-img">
-            </label>
-            <button id="select">Select</button>
-    
+<body id="mainpagebody">
+    <main>
+        <h1>Gotta Catch Them All!<br> Well..10 of them...</h1>
+            <div class="pokemon-options">
+                <label class="pokemon-choices">
+                    <input name="pokemon" type="radio" id="poke-1-radio">
+                    <img id="poke-1-img">
+                </label>
+                <label class="pokemon-choices">
+                    <input name="pokemon" type="radio" id="poke-2-radio">
+                    <img id="poke-2-img">
+               </label>
+                <label class="pokemon-choices">
+                    <input name="pokemon" type="radio" id="poke-3-radio">
+                    <img id="poke-3-img">
+                </label>
+                
+            </main>
+            <div id="button">
+                <button id="select">Capture</button>
+            </div>
 
     <script type="module" src="./app.js"></script>
 </body>
