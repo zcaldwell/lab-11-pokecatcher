@@ -1,6 +1,6 @@
 import { pokemon } from './pokemon.js';
 import { capturePokemon, encounteredPokemon } from './storage.js';
-console.log(pokemon);
+
 
 const poke1Img = document.getElementById('poke-1-img');
 const poke2Img = document.getElementById('poke-2-img');
