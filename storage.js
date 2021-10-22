@@ -18,6 +18,9 @@ export function getPokedex(){
     return results;
 }
 
+export function setPokedex(e){
+    localStorage.setItem('RESULTS', JSON.stringify(e));
+}
 
 export function encounteredPokemon(id){
     let results = getPokedex();
@@ -29,7 +32,7 @@ export function encounteredPokemon(id){
         const newItem = { id: id, encountered: 1, captured: 0 };
         results.push(newItem);
     }
-    localStorage.setItem('RESULTS', JSON.stringify(results));
+    setPokedex(results);
     
 }
 
@@ -37,8 +40,7 @@ export function capturePokemon(id){
     let results = getPokedex();
     let item = findById(results, id);
     item.captured++;
-    localStorage.setItem('RESULTS', JSON.stringify(results));
-    console.log(results);
-}
+    setPokedex(results);
+}   
 
 
