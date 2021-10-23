@@ -20,3 +20,9 @@ div {
     flex-direction: column;
     
 }
+
+#chart1 {
+    height: 700px;
+    width: 700px;
+    margin-left: 25%;
+}

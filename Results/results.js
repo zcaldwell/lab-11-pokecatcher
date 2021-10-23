@@ -30,11 +30,11 @@ const names = results.map((item)=>{
     const poke = findById(pokemon, item.id);
     return poke.pokemon;
 });
-console.log(pokemon);
+
 
 const captured = results.map(item=>item.captured);
 
-var ctx = document.getElementById('resultsChart').getContext('2d');
+var ctx = document.getElementById('resultsChart1').getContext('2d');
 //eslint-disable-next-line no-undef
 new Chart(ctx, {
     type: 'bar',
@@ -70,3 +70,6 @@ new Chart(ctx, {
         }
     }
 });
+
+
+
